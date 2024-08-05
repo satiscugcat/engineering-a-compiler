@@ -1,8 +1,8 @@
 mod scanner;
-use scanner::regex_parser;
-use scanner::thomspons_constructor;
+use scanner::*;
+
 fn main() {
-    let instructions = regex_parser::regex_parser("a(b|c)*(c|d)*");
+    let instructions = regex_parser::regex_parser("(a|b|c)*");
     let nfa = thomspons_constructor::thomspons_constructor(instructions);
 
     println!("{:?}", nfa);
